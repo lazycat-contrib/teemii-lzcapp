@@ -1,0 +1,42 @@
+{
+  "name": "Teemii",
+  "package": "cloud.lazycat.app.teemii",
+  "description": "一款精简的漫画阅读程序",
+  "homepage": "https://github.com/dokkaner/teemii",
+  "author": "dokkaner",
+  "app_features": [
+    "multi_instance",
+    "public_path"
+  ],
+  "subdomain": "teemii",
+  "version": "0.8.2",
+  "public_paths": [
+    "/"
+  ],
+  "iconPath": "icon.png",
+  "composePath": "docker-compose.yml",
+  "unsupported_platforms": [],
+  "lastRouteType": "from_compose",
+  "port_mappings": {
+    "teemii-frontend_8080_80": {
+      "use": true,
+      "type": "http",
+      "path": "/",
+      "targetPath": "/"
+    }
+  },
+  "image_dokkaner_teemii-frontend_latest": {
+    "originalImage": "dokkaner/teemii-frontend:latest",
+    "pushTarget": "lazycat",
+    "newImageName": "registry.lazycat.cloud/czyt/dokkaner/teemii-frontend:1988111502a7c15d",
+    "timestamp": "2025-03-01T13:39:14.584Z"
+  },
+  "image_dokkaner_teemii-backend_latest": {
+    "originalImage": "dokkaner/teemii-backend:latest",
+    "pushTarget": "lazycat",
+    "newImageName": "registry.lazycat.cloud/czyt/dokkaner/teemii-backend:2868353dccff705c",
+    "timestamp": "2025-03-01T13:40:46.513Z"
+  },
+  "teemii-backend_volume_teemii-data_/data_action": "emptyDir",
+  "teemii-backend_volume_/data_location": "app_data"
+}

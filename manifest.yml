@@ -1,0 +1,31 @@
+lzc-sdk-version: "0.1"
+name: Teemii
+package: cloud.lazycat.app.teemii
+version: 0.8.2
+description: 一款精简的漫画阅读程序
+homepage: https://github.com/dokkaner/teemii
+author: dokkaner
+application:
+  subdomain: teemii
+  background_task: false
+  multi_instance: true
+  gpu_accel: false
+  kvm_accel: false
+  usb_accel: false
+  public_path:
+    - /
+  routes:
+    - /=http://teemii-frontend.cloud.lazycat.app.teemii.lzcapp:80/
+services:
+  teemii-frontend:
+    image: registry.lazycat.cloud/czyt/dokkaner/teemii-frontend:1988111502a7c15d
+    environment:
+      - VITE_APP_TITLE=Teemii
+      - VITE_APP_PORT=80
+  teemii-backend:
+    image: registry.lazycat.cloud/czyt/dokkaner/teemii-backend:2868353dccff705c
+    environment:
+      - EXPRESS_PORT=3000
+      - SOCKET_IO_PORT=1555
+    binds:
+      - /lzcapp/var/data:/data
