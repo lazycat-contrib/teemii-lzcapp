@@ -1,0 +1,14 @@
+package: cloud.lazycat.app.teemii
+version: 0.8.2
+name: Teemii
+description: "一款精简的漫画阅读程序"
+min_os_version: "1.5.0"
+homepage: https://github.com/dokkaner/teemii
+author: dokkaner
+locales:
+  zh:
+    description: "一款精简的漫画阅读程序"
+    name: Teemii
+  en:
+    description: "A lightweight manga reading application"
+    name: Teemii
