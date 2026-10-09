@@ -1,4 +1,5 @@
 package: cloud.lazycat.app.teemii
+license: MIT
 version: 0.8.2
 name: Teemii
 description: "一款精简的漫画阅读程序"
